@@ -17,7 +17,7 @@ function is_number(numero) {
 
 // Valida si es un número
 function is_operator(operator) {
-  if (param.toLowerCase(operator) === "suma" || param.toLowerCase(operator) === "resta" || param.toLowerCase(operator) === "division" || param.toLowerCase(operator) === "multiplicacion") {
+  if (operator.toLowerCase() === "suma" || operator.toLowerCase() === "resta" || operator.toLowerCase() === "division" || operator.toLowerCase() === "multiplicacion") {
     // Es un operador válido
     switch (operator) {
       case "suma":
@@ -41,19 +41,44 @@ function is_operator(operator) {
   }
 }
 
+//Funcion suma
+var suma = function (a , b){
+  console.log("El resultado es  " +  ( a + b ));
+};
+
+//Funcion resta
+var resta = function (a , b){
+  console.log("El resultado es  " +  ( a - b ));
+};
+
+//Funcion multiplicar
+var multiplicacion = function (a , b){
+  console.log("El resultado es  " +  ( a * b ));
+};
+//Funcion dividir
+var division = function (a , b) {
+console.log("El resultado es  " +  ( a / b ));
+};
+
 // Función que realiza el cálculo de los valores a y b con respecto al operador
 function calcular(a, b, operador) {
-  if(is_number(a) && is_number(b) && is_operator(operador) && operador !== null){
+  if(is_number(a) && is_number(b) && is_operator(operador)){
     //Se puede operar
-    switch (operador) {
-      case expression: "+";
-          
-          break;
-      case expression: "-";
-
+    x = Number(a);
+    y = Number(b);
+    switch (signo_operacion) {
+      case "+":
+        suma(x,y);
         break;
-      default:
-
+      case "-":
+        resta(x,y);
+        break;
+      case "*":
+        multiplicacion(x,y);
+        break;
+      case "/":
+        division(x,y);
+        break;
     }
   } else {
     // No se puede operar se envía el mensaje de error
@@ -66,3 +91,5 @@ function calcular(a, b, operador) {
     }
   }
 }
+
+calcular(operador_a, operador_b, operador);
