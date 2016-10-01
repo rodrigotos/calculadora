@@ -43,10 +43,13 @@ function is_operator(operator) {
 
 // Función que realiza el cálculo de los valores a y b con respecto al operador
 function calcular(a, b, operador) {
-  if(is_number(a) && is_number(b) && is_operator(operador) && signo_operacion){
+  if(is_number(a) && is_number(b) && is_operator(operador) && operador !== null){
     //Se puede operar
     switch (operador) {
-      case expression:
+      case expression: "+";
+          
+          break;
+      case expression: "-";
 
         break;
       default:
